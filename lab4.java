@@ -1,9 +1,8 @@
-package com.company;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class TarkovKruta {
+//можно +балл?))0)
 
     public static void main(String[] args) {
 
@@ -11,7 +10,7 @@ public class Main {
 
         int array[], arraysize;
 
-        int counter = 0;
+        int temp = 0;
 
         int[] copiedArray = null;
 
@@ -23,8 +22,10 @@ public class Main {
         System.out.println("Задайте массив: ");
 
         for (int i = 0; i < array.length; i++) {
+
             System.out.println("Введите значение " + i + " -ого элемента массива");
             array[i] = in.nextInt();
+
         }
         System.out.println("Исходный массив- " + Arrays.toString(array));
 
@@ -34,17 +35,20 @@ public class Main {
 
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] == chtoMiUdalyaem) {
-                counter += 1;
-                copiedArray = new int[array.length - counter];
+
+                temp += 1;
+                copiedArray = new int[array.length - temp];
+
             }
         }
         int schitayu = 0;
-        for (int k = 0; k < array.length; k++) {
-            if (!(array[k] == chtoMiUdalyaem) & (schitayu < copiedArray.length)) {
-                copiedArray[schitayu] = array[k];
+        for (int m = 0; m < array.length; m++) {
+            if (!(array[m] == chtoMiUdalyaem) & (schitayu < copiedArray.length)) {
+
+                copiedArray[schitayu] = array[m];
                 schitayu = schitayu + 1;
             }
         }
-        System.out.println(Arrays.toString(copiedArray));
+        System.out.println("Новый массив с удаленным элементом: " + Arrays.toString(copiedArray));
     }
 }
